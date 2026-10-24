@@ -1,0 +1,55 @@
+# Publishes Acme Procure to GitHub Pages.
+#   /acme-procure/       participants' copy, always branch release/2.3
+#   /acme-procure-demo/  facilitator's copy, the release picked below (none = not published)
+# Switch the facilitator's copy: Actions > Deploy Pages > Run workflow > demo_release,
+# or: gh workflow run deploy-pages.yml -f demo_release=2.4
+name: Deploy Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      demo_release:
+        description: Release on the facilitator's copy (/acme-procure-demo/)
+        type: choice
+        options: ["none", "2.3", "2.4"]
+        default: "none"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: release/2.3
+          path: _src/participants
+      - uses: actions/checkout@v4
+        if: inputs.demo_release != 'none'
+        with:
+          ref: release/${{ inputs.demo_release }}
+          path: _src/demo
+      - name: Assemble site
+        run: |
+          mkdir -p _site/acme-procure
+          cp site-index.html _site/index.html
+          rsync -a --exclude .git _src/participants/ _site/acme-procure/
+          if [ -d _src/demo ]; then mkdir -p _site/acme-procure-demo && rsync -a --exclude .git _src/demo/ _site/acme-procure-demo/; fi
+          echo "Participants: release 2.3 · Facilitator: release ${{ inputs.demo_release }}" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
