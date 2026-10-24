@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>New request · Acme Procure</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="new">
+<div class="shell">
+<aside id="appNav"></aside>
+<div class="content">
+<header id="appHeader"></header>
+<main id="page">
+<div class="crumbs"><a href="index.html">Purchasing</a> / New request</div>
+<div class="form-layout">
+<form id="requestForm" class="card" novalidate>
+  <div class="form-head">
+    <div><h1 id="pageTitle">New purchase request</h1><p class="sub">Fields marked <span style="color:var(--bad)">*</span> are required.</p></div>
+    <div id="formHeadActions"></div>
+  </div>
+  <div class="fieldset">
+    <p class="legend">Request</p>
+    <div class="grid">
+      <div class="field full"><label for="title">Title <span class="req">*</span></label><input id="title" name="title" maxlength="80" autocomplete="off" placeholder="What are you buying?"><p class="err"></p></div>
+      <div class="field full"><label for="justification">Justification <span class="req">*</span></label><textarea id="justification" name="justification" maxlength="500" placeholder="Why is this needed?"></textarea><p class="err"></p></div>
+    </div>
+  </div>
+  <div class="fieldset">
+    <p class="legend">Vendor and amount</p>
+    <div class="grid">
+      <div class="field"><label for="vendor">Vendor <span class="req">*</span></label><select id="vendor" name="vendor"></select><p class="err"></p></div>
+      <div class="field"><label for="category">Category <span class="req">*</span></label><select id="category" name="category">
+        <option value="">Choose a category</option><option>Office supplies</option><option>IT hardware</option><option>Software</option><option>Facilities</option>
+        <option>Logistics</option><option>Professional services</option><option>Marketing</option><option>MRO</option></select><p class="err"></p></div>
+      <div class="field"><label for="amount">Amount <span class="req">*</span></label><div class="adorn"><span class="pre" aria-hidden="true">$</span><input id="amount" name="amount" inputmode="decimal" autocomplete="off" placeholder="0.00"><span class="post" aria-hidden="true">USD</span></div><p class="hint">Including taxes and shipping.</p><p class="err"></p></div>
+    </div>
+  </div>
+  <div class="fieldset">
+    <p class="legend">Budget and timing</p>
+    <div class="grid">
+      <div class="field"><label for="costCenter">Cost center <span class="req">*</span></label><input id="costCenter" name="costCenter" placeholder="CC-0000" autocomplete="off"><p class="err"></p></div>
+      <div class="field"><label for="neededBy">Needed by <span class="req">*</span></label><input id="neededBy" name="neededBy" placeholder="YYYY-MM-DD" autocomplete="off"><p class="err"></p></div>
+    </div>
+  </div>
+  <div class="form-foot" id="formActions"><a class="btn secondary" href="index.html" id="cancel">Cancel</a><span class="note">Requests are routed by amount when you submit.</span></div>
+</form>
+<aside class="card panel"><div class="pad">
+  <h2>Approval route</h2>
+  <ol class="preview-steps" id="previewSteps"></ol>
+  <p id="routePreview" aria-live="polite"></p>
+  <div id="vendorCard"></div>
+</div></aside>
+</div>
+</main>
+<footer id="appFooter"></footer>
+</div>
+</div>
+<script src="config.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
