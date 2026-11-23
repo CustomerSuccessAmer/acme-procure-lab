@@ -1,0 +1,26 @@
+VendorId,VendorName,Category,Country,Status,BlockedReason,PaymentTerms
+V-1001,Brightline Office Supply,Office supplies,US,Active,,Net 30
+V-1002,Cedar Ridge Logistics,Logistics,US,Active,,Net 45
+V-1003,Northgate IT Hardware,IT hardware,US,Active,,Net 30
+V-1004,Bluewater Software Partners,Software,CA,Active,,Net 30
+V-1005,Summit Facilities Group,Facilities,US,Active,,Net 60
+V-1006,Quickparts Trading LLC,MRO,MX,Blocked,Failed sanctions screening 2026-05,Net 30
+V-1007,Ironwood Industrial Supply,MRO,US,Active,,Net 45
+V-1008,Lakeshore Print & Marketing,Marketing,US,Active,,Net 30
+V-1009,Granite Peak Consulting,Professional services,US,Active,,Net 30
+V-1010,Harbor Point Consulting,Professional services,US,Blocked,"Duplicate of V-1009, bank details changed",Net 30
+V-1011,Silverline Networks,IT hardware,CA,Active,,Net 45
+V-1012,Redfern Safety Equipment,MRO,US,Active,,Net 30
+V-1013,Willow Creek Catering,Facilities,US,Active,,Net 15
+V-1014,Apex Cloud Services,Software,US,Active,,Net 30
+V-1015,Meridian Tech Resale,IT hardware,US,Blocked,Insurance certificate expired 2026-03,Net 30
+V-1016,Pinecrest Furniture Co.,Office supplies,US,Active,,Net 45
+V-1017,Riverbend Freight,Logistics,MX,Active,,Net 60
+V-1018,Oakhurst Legal Services,Professional services,US,Active,,Net 30
+V-1019,Stonebridge Electrical,Facilities,US,Active,,Net 45
+V-1020,Clearview Training Institute,Professional services,CA,Active,,Net 30
+V-1021,Copperfield Packaging,MRO,US,Active,,Net 45
+V-1022,Evergreen Janitorial,Facilities,US,Active,,Net 30
+V-1023,Horizon Data Systems,Software,US,Active,,Net 30
+V-1024,Maple Leaf Couriers,Logistics,CA,Active,,Net 15
+V-1025,Trailhead Events,Marketing,US,Active,,Net 30

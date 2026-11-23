@@ -1,0 +1,21 @@
+Issue key,Issue Type,Summary,Description,Acceptance Criteria,Priority,Status,Epic Link,Story Points,Created,Reporter
+PROC-101,Story,Create a purchase request,"As a requester, I want to create a purchase request with the vendor, amount and justification, so that I can buy what my team needs.","- Given I am a Requester, when I open New request, then I see Title, Vendor, Category, Amount (USD), Cost center, Needed by and Justification.
+- Given a required field is empty, when I submit, then the request is not submitted and the field shows an error.
+- Given the amount is 0, negative or has more than 2 decimals, when I submit, then I see ""Enter an amount greater than 0 with up to 2 decimals"".
+- Given a valid request, when I submit, then I see a confirmation with the request ID and the approval route.",High,Ready for test,PROC-100 Purchase requests,5,2026-08-11,Priya Nair
+PROC-102,Story,Validate the vendor against the vendor master,"As a requester, I want to pick the vendor from the approved vendor list, so that I don't buy from an unknown supplier.","- Given I open the Vendor field, then I can only choose vendors from the vendor master.
+- Given I type part of a vendor name, then matching vendors are suggested.",High,Ready for test,PROC-100 Purchase requests,3,2026-08-11,Priya Nair
+PROC-103,Story,Reject requests to blocked vendors,"As Procurement, I want requests to blocked vendors rejected, so that we never pay a supplier we have stopped working with.","- Given the vendor's status is Blocked in the vendor master, when the requester submits, then the request is rejected.
+- Then the requester sees ""This vendor is blocked. Choose another vendor.""
+- Then the approval route shows ""Rejected - blocked vendor"".",High,Ready for test,PROC-100 Purchase requests,3,2026-08-12,Priya Nair
+PROC-104,Story,Auto-approve small requests,"As a requester, I want small purchases approved straight away, so that I don't wait for routine items.","- Given the amount is under $5,000, when I submit, then the request is approved automatically.
+- Then the approval route shows ""Auto-approved"" and the status is Approved.",High,Ready for test,PROC-100 Purchase requests,2,2026-08-12,Priya Nair
+PROC-105,Story,Route mid-size requests to the manager,"As a manager, I want to approve my team's mid-size purchases, so that I control my budget.","- Given the amount is from $5,000 up to $50,000, when the requester submits, then the request goes to the requester's manager.
+- Then the approval route shows ""Manager"" and the status is Pending manager.",High,Ready for test,PROC-100 Purchase requests,3,2026-08-13,Priya Nair
+PROC-106,Story,Route large requests to Finance,"As Finance, I want to approve large purchases after the manager, so that big spend is checked against the budget.","- Given the amount is over $50,000, when the manager approves, then the request goes to Finance.
+- Then the approval route shows ""Manager + Finance"" and the status is Pending finance.",High,Ready for test,PROC-100 Purchase requests,3,2026-08-13,Priya Nair
+PROC-107,Story,Approval inbox by role,"As an approver, I want one inbox with the requests waiting for me, so that I can approve or reject them quickly.","- Given I am a Manager, then my inbox lists requests pending manager approval for my team.
+- Given I am Finance, then my inbox lists requests pending finance approval.
+- Given I open a request, then I can Approve or Reject it; Reject needs a comment.",Medium,Ready for test,PROC-100 Purchase requests,5,2026-08-18,Priya Nair
+PROC-108,Story,See request status,"As a user, I want to see what happened with my request, so that I know where it is.","- Status is visible.
+- History is shown.",Medium,Ready for test,PROC-100 Purchase requests,2,2026-08-19,Priya Nair
