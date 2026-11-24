@@ -10,9 +10,9 @@ Then the requester is told the vendor is blocked and asked to choose another one
 Then the approval route is Rejected - blocked vendor.",High,Ready for test,PROC-100 Purchase requests,3,2026-08-12,Priya Nair
 PROC-104,Story,Auto-approve small requests,"As a requester, I want small purchases approved straight away, so that I don't wait for routine items.","Given the amount is under $5,000, when I submit, then the request is approved automatically.
 Then the approval route is Auto-approved and the status is Approved.",High,Ready for test,PROC-100 Purchase requests,2,2026-08-12,Priya Nair
-PROC-105,Story,Route mid-size requests to the manager,"As a manager, I want to approve my team's mid-size purchases, so that I control my budget.","Given the amount is from $5,000 up to $50,000, when the requester submits, then the request goes to their manager.
+PROC-105,Story,Route mid-size requests to the manager,"As a manager, I want to approve my team's mid-size purchases, so that I control my budget.","Given the amount is from $5,000 up to $49,999.99, when the requester submits, then the request goes to their manager.
 Then the approval route is Manager and the status is Pending manager.",High,Ready for test,PROC-100 Purchase requests,3,2026-08-13,Priya Nair
-PROC-106,Story,Route large requests to Finance,"As Finance, I want to approve large purchases after the manager, so that big spend is checked against the budget.","Given the amount is over $50,000, when the manager approves, then the request goes to Finance.
+PROC-106,Story,Route large requests to Finance,"As Finance, I want to approve large purchases after the manager, so that big spend is checked against the budget.","Given the amount is $50,000 or more, when the manager approves, then the request goes to Finance.
 Then the approval route is Manager + Finance and the status is Pending finance.",High,Ready for test,PROC-100 Purchase requests,3,2026-08-13,Priya Nair
 PROC-107,Story,Approval inbox by role,"As an approver, I want one inbox with the requests waiting for me, so that I can approve or reject them quickly.","Given I am a Manager, then my inbox lists requests pending manager approval for my team.
 Given I am Finance, then my inbox lists requests pending finance approval.
