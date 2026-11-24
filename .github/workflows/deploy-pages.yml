@@ -11,7 +11,7 @@ on:
       demo_release:
         description: Release on the facilitator's copy (/acme-procure-demo/)
         type: choice
-        options: ["none", "2.3", "2.4"]
+        options: ["none", "2.3", "2.3.1", "2.4"]
         default: "none"
 
 permissions:
