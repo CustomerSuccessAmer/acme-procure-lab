@@ -81,7 +81,7 @@
   function routeFor(amount, v) {
     if (v && v.status === 'Blocked') return 'blocked';
     if (amount < 5000) return 'auto';
-    if (amount > 50000) return 'finance';
+    if (amount >= 50000) return 'finance';
     return 'manager';
   }
   function money(n) { return Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }

@@ -1,2 +1,2 @@
-// The only file that differs between the release branches.
+// The release this copy runs.
 window.ACME_RELEASE = '2.3';
