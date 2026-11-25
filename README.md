@@ -25,7 +25,7 @@ The four documents participants work from, in [`source-kit/`](source-kit/). All 
 | File | What it is |
 | --- | --- |
 | [Acme-Procure-Source-Kit.zip](https://github.com/CustomerSuccessAmer/acme-procure-lab/raw/main/source-kit/Acme-Procure-Source-Kit.zip) | All four files in one download |
-| [Acme_Procure_BRD_v1.2.docx](source-kit/Acme_Procure_BRD_v1.2.docx) | Business requirements document |
+| [Acme_Procure_BRD_v1.2.pdf](source-kit/Acme_Procure_BRD_v1.2.pdf) | Business requirements document |
 | [FIN-POL-007_Purchase_Approval_Policy.pdf](source-kit/FIN-POL-007_Purchase_Approval_Policy.pdf) | The signed purchase approval policy |
 | [PROC_user_stories_export.csv](source-kit/PROC_user_stories_export.csv) | User stories PROC-101 to PROC-108 |
 | [Vendor_master_list.csv](source-kit/Vendor_master_list.csv) | Vendors V-1001 to V-1025, three of them blocked |
